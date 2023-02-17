@@ -1,0 +1,11 @@
+import { autoCompleteReducer, getMapReducer } from "./searchPlaceReducer";
+
+import { configureStore } from "@reduxjs/toolkit";
+import thunk from "redux-thunk";
+
+const store = configureStore({
+  reducer: { getMapReducer, autoCompleteReducer },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+});
+
+export default store;
